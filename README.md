@@ -1,26 +1,27 @@
-# Docker for Android SDK 31
+# Docker for Android SDK 31 with Fastlane
 
-Docker for Android SDK 31 with preinstalled build tools and emulator image
+Docker for Android SDK 31 with preinstalled build tools without emulator image and with fastlane
 
 > Edit from [mindrunner/docker-android-sdk](https://github.com/mindrunner/docker-android-sdk)
 
 **Installed Packages**
+
 ```bash
 # sdkmanager --list
   Path                                        | Version | Description                                | Location                                   
-  -------                                     | ------- | -------                                    | -------                                    
-  build-tools;32.0.0                          | 32.0.0  | Android SDK Build-Tools 32                 | build-tools/32.0.0                         
+  -------                                     | ------- | -------                                    | -------                                         
+  build-tools;30.0.3                          | 30.0.3  | Android SDK Build-Tools 30.0.3             | build-tools/30.0.3
   cmdline-tools;latest                        | 6.0     | Android SDK Command-line Tools (latest)    | cmdline-tools/latest                       
   emulator                                    | 31.2.8  | Android Emulator                           | emulator                                   
   patcher;v4                                  | 1       | SDK Patch Applier v4                       | patcher/v4                                 
   platform-tools                              | 32.0.0  | Android SDK Platform-Tools                 | platform-tools                             
   platforms;android-31                        | 1       | Android SDK Platform 31                    | platforms/android-31                       
-  system-images;android-31;google_apis;x86_64 | 8       | Google APIs Intel x86 Atom_64 System Image | system-images/android-31/google_apis/x86_64
 ```
 
 **Usage**
 
 - Interactive way
+
   ```bash
   $ docker run -it --rm --device /dev/kvm androidsdk/android-31:latest bash
   # check installed packages
@@ -36,6 +37,7 @@ Docker for Android SDK 31 with preinstalled build tools and emulator image
   You could also use [`scrcpy`](https://github.com/Genymobile/scrcpy) to do a screencast of the emulator.
 
 - Non-interactive way
+
   ```bash
   # check installed packages
   $ docker run -it --rm androidsdk/android-31:latest sdkmanager --list
